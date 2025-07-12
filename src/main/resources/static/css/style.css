@@ -1,0 +1,384 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+/* Header */
+header {
+  background-color: #1f2937;
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: visible;
+}
+
+#search-input {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 220px;
+}
+
+#filter-toggle-btn {
+  padding: 8px 12px;
+  background-color: #e5e7eb;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Filter Popup Panel */
+.filter-popup {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  width: 260px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.filter-popup h3 {
+  margin-top: 0;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.filter-popup label {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  margin-top: 10px;
+}
+
+.filter-popup input,
+.filter-popup select {
+  width: 100%;
+  padding: 6px;
+  font-size: 14px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.filter-buttons button {
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+#apply-filter {
+  background-color: #007bff;
+  color: white;
+}
+
+#clear-filter {
+  background-color: #f5f5f5;
+  color: black;
+  border: 1px solid #ccc;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Controls below header */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.controls select,
+.controls input {
+  padding: 6px 10px;
+  font-size: 14px;
+  margin-right: 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+}
+
+#add-employee-btn {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#add-employee-btn:hover {
+  background-color: #059669;
+}
+
+/* Employee List Grid */
+#employee-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+
+/* Employee Card */
+.employee-card {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.employee-card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.employee-card p {
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+/* Buttons */
+.employee-card button {
+  margin-top: 8px;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #3b82f6;
+  color: white;
+  margin-right: 5px;
+}
+
+.delete-btn {
+  background-color: #ef4444;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #2563eb;
+}
+
+.delete-btn:hover {
+  background-color: #dc2626;
+}
+
+/* Footer */
+footer {
+  background-color: #1f2937;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Pagination */
+.pagination {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.pagination button {
+  margin: 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background: #eee;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+/* ✅ Form Page Styles (only when body has class="form-page") */
+.form-page {
+  background-color: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form-page form {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-page #form-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #111827;
+}
+
+.form-page label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  color: #374151;
+  margin-top: 1rem;
+}
+
+.form-page input,
+.form-page select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background-color: #fff;
+  margin-bottom: 0.5rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-page input:focus,
+.form-page select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.form-page .form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.form-page #cancel-btn {
+  background: white;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.form-page #save-btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.form-page #save-btn:hover {
+  background-color: #1e40af;
+}
+
+.form-page #cancel-btn:hover {
+  background-color: #f9fafb;
+}
+label {
+  display: block;
+  font-size: 14px;
+  color: #333; /* Add color if it's white-on-white issue */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-container {
+    padding: 0 1rem;
+  }
+
+  .controls select,
+  .controls button {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .employee-card {
+    padding: 0.75rem;
+  }
+
+  .employee-card button {
+    display: block;
+    width: 100%;
+    margin: 0.25rem 0;
+  }
+
+  .search-container input {
+    width: 90%;
+  }
+
+  .controls {
+    padding: 0.5rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
+
+.sort-show-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
